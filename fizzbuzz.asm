@@ -23,22 +23,22 @@ loop_start:
 
     ; TODO: make these a function
     ; if count % 3 == 0
-    xor rdx, rdx
-    mov rax, r8
-    mov rcx, 3
+    xor rdx, rdx            ; clear remainder
+    mov rax, r8             ; prepare number for division
+    mov rcx, 3              ; check if divisible by 3
     div rcx
-    test rdx, rdx
+    test rdx, rdx           ; check if the remainder is 0
     jz print_fizz
 finish_print_fizz:
     ; if count % 5 == 0
-    xor rdx, rdx
-    mov rax, r8
-    mov rcx, 5
+    xor rdx, rdx            ; clear remainder
+    mov rax, r8             ; prepare number for division
+    mov rcx, 5              ; check if divisible by 5
     div rcx
-    test rdx, rdx
+    test rdx, rdx           ; check if the remainder is 0
     jz print_buzz
 finish_print_buzz:
-    cmp r9, 0
+    cmp r9, 0               ; if(!didPrint)
     jne do_not_print
 
     ; print out the number
