@@ -21,6 +21,7 @@ loop_start:
 
     xor r9, r9              ; didPrint = 0
 
+    ; TODO: make these a function
     ; if count % 3 == 0
     xor rdx, rdx
     mov rax, r8
@@ -73,6 +74,7 @@ print_number:
     push rdi        ; preserve rdi
 
     mov rax, r8     ; number to be converted
+    ; TODO: can this division be multiplication since it is by 10?
     mov rcx, 10     ; divisor
     xor rbx, rbx    ; count digits
 
